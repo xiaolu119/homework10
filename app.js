@@ -191,14 +191,14 @@ class App {
 
     createServer(teamRoster) {
 
-        fs.writeFile('./public/team.html', teamRoster, function (err) {
+        fs.writeFile('./Screenshot/team.html', teamRoster, function (err) {
             if (err) throw err;
             console.log('Saved!');
         });
 
 
         http.createServer(function (req, res) {
-            fs.readFile('./public/team.html', function (err, data) {
+            fs.readFile('./Screenshot/team.html', function (err, data) {
                 res.writeHead(200, { 'Content-Type': 'text/html' });
                 res.write(data);
                 res.end();
